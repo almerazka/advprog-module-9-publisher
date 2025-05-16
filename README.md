@@ -8,3 +8,6 @@ Pada program _publisher_, terdapat 5 `publish_event`, dan setiap `publish_event`
 
 ## Publisher dan Subscriber mengakses URL yang sama. Apa artinya?
 URL `amqp://guest:guest@localhost:5672` menunjukkan bahwa baik _publisher_ maupun _subscriber_ terhubung ke _broker_ **RabbitMQ** yang sama, yang berjalan di mesin lokal, menggunakan protokol **AMQP**, dengan kredensial `default (guest:guest)` dan port **AMQP** `default (5672)`. Keduanya memanggil server **AMQP** yang sama dan berkomunikasi dengan _message broker_ yang sama. Dengan demikian, pesan yang dikirim oleh _publisher_ akan diterima oleh _subscriber_ yang juga terhubung ke server yang sama.
+
+## Running RabbitMQ as Message Broker
+![image](https://github.com/user-attachments/assets/efb59dc8-72d6-42e3-a48d-c18d90f848eb)
