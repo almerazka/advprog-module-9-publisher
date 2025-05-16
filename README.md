@@ -24,3 +24,8 @@ Di terminal kedua, _Publisher_ dijalankan menggunakan perintah `cargo run` dari 
 3. **Terminal Ketiga** - Menjalankan _Subscriber_ :
 Di terminal ketiga, _Subscriber_ dijalankan menggunakan perintah `cargo run` dari project _subscriber_. _Subscriber_ mendengarkan dan menerima pesan yang dikirim oleh _Publisher_ melalui **RabbitMQ**.
     - Log pada terminal _subscriber_ menunjukkan bahwa setiap pesan yang diterima oleh _subscriber_ dicetak ke terminal. Setiap kali _Publisher_ mengirimkan data, _Subscriber_ menerima pesan dengan informasi pengguna yang berbeda, seperti `user_id` dan `user_name`.
+
+## Monitoring chart based on publisher
+![image](https://github.com/user-attachments/assets/46fed0e2-1a3d-4ccf-8b7d-6663f713bd9e)
+
+Berdasarkan gambar diatas, ketika _publisher_ mengirimkan data ke _message broker_ **RabbitMQ** menggunakan perintah `cargo run`, _message rates_ langsung meningkat, yang tercermin dalam grafik **Publish** (warna kuning) pada bagian `Message rates last minute`. Hal ini menunjukkan bahwa **RabbitMQ** menerima lebih banyak pesan yang dikirimkan oleh _publisher_ dalam waktu singkat. Ketika _publisher_ mengirimkan data secara terus-menerus, _message rates_ tetap tinggi, sedangkan jika ada waktu jeda antara eksekusi _publisher_, _message rates_ akan menurun karena tidak ada pesan yang dikirim dalam periode tersebut. Dengan demikian, _message rates_ akan meningkat setiap kali _publisher_ mengirimkan data, dan menurun jika tidak ada pengiriman pesan dalam waktu yang lebih lama.
